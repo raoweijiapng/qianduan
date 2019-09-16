@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p id="msg">上课不听讲，一半只有三种情况：1.手里有个手机 2.心里有个美女 3.身边做个逗比mg</p>
+
+</body>
+<script>
+	var msg = document.getElementById('msg');
+	function test(){
+		var str = msg.innerHTML;
+		msg.innerHTML = str.substr(1)+str.charAt(0);//substr() 方法可在字符串中抽取从 start 下标开始的指定数目的字符。
+	}
+	setInterval('test()',100);
+</script>
+</html>
