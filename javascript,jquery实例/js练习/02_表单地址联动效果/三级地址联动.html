@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+</head>
+<body>
+    收货地址:<select name="" id="sheng"><option value="">请选择</option></select>省
+    <select name="" id="shi"><option value="">请选择</option></select>市
+    <select name="" id="xian"><option value="">请选择</option></select>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <script>
+		var arr = {
+			辽宁省:{沈阳市: ['和平区','皇姑区','浑南区'],
+					鞍山市: ['1区','2区','3县','4县','5县'],
+					大连市: ['1区','2区','3县','4县','5县']},
+			吉林省:{长春市: ['1县','1区','2区'],
+					吉林市: ['1区','2区','3区','4区'],
+					四平市: ['5区','6区','7区','8区','9区','10区']},
+			黑龙江省:{哈尔滨市: ['11区','12区','13区'],
+					齐齐哈尔市: ['厚街镇','14区','15区','16区','17区'],
+					漠河市: ['18区','19区','20区','21区']}
+        };
+        //console.log(arr);
+        for(key in arr){
+            sheng.add(new Option(key,key));
+        }
+        $('#sheng').change(function(){
+            shi.options.length=0;
+            for(key in arr[sheng.value]){
+                shi.add(new Option(key,key))
+            }
+        });
+        $('#shi').change(function(){
+            xian.options.length=0;
+            for(key in arr[sheng.value][shi.value]){   
+                a=arr[sheng.value][shi.value][key]
+                xian.add(new Option(a,a))
+            }
+        });
+	</script>
+</body>
+</html>

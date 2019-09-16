@@ -1,0 +1,87 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+ 
+.main {
+    width: 936px;
+    height: 316px;
+    margin: 50px auto;
+    overflow: hidden;
+}
+ 
+.nav {
+    width: 1200px;
+    height: 80px;
+}
+ 
+ul {list-style-type: none;
+    position: absolute;
+    left: 1265px;
+    top: 330px;}
+ 
+li {
+    float: left;
+    width: 18px;
+    text-align: center;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+
+#leftside{
+        position: absolute;
+        left: 460px;
+        top: 180px;
+        width:50px;
+        height:50px;
+        z-index: 100;
+
+    }
+
+#rightside{
+        position: absolute;
+        left: 1350px;
+        top: 180px;
+        width:50px;
+        height:50px;
+        z-index: 100;
+    }
+ 
+.changeColor {
+    background: #ffcc00;
+    border-radius: 100px;
+}
+ 
+.banner {
+    width: 936px;
+    height: 316px;
+    overflow: hidden;
+}
+ 
+.banner-slide {
+    width: 936px;
+    height: 316px;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+ 
+.slide1 {
+    background-image: url("/home/raoweijia/lunbotu/1.png");
+}
+.slide2 {
+    background-image: url("/home/raoweijia/lunbotu/2.png");
+}
+.slide3 {
+    background-image: url("/home/raoweijia/lunbotu/3.png");
+}
+.slide4 {
+    background-image: url("/home/raoweijia/lunbotu/4.png");
+}
+.slide5 {
+    background-image: url("/home/raoweijia/lunbotu/5.png");
+}
+.slide6 {
+    background-image: url("/home/raoweijia/lunbotu/6.png");
+}
+
