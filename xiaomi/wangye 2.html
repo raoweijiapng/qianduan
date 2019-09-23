@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<!----  <link rel="stylesheet" href="css/wangye.css">
+  <script src="js/wangye.js"></script>-->
+  <title>Document</title>
+</head>
+<style>
+  .navbar{
+    font-size: 0.8rem; 
+    padding: 0rem 1rem;
+  }
+
+  .nav{
+    padding: 1rem 1rem;
+  }
+
+  #shopping:hover{
+    color: orange;
+    width: 120px;
+    text-align: center;
+    background-color: #fff;
+  }
+
+  #acolor{
+    color: black;    
+  }
+
+  #acolor:hover{
+    color: orange;    
+  }
+
+  #image1{
+    display: block;
+    margin: 1rem 1rem;
+  }
+
+  #image2{
+    width:2.9rem;
+    height: 2.9rem;
+    border: 0.1rem solid #ccc;
+  }
+  #sousuo{
+    margin: 1.5rem 0rem;
+  }
+
+.carousel-inner img {
+      width: 100%;
+      height: 100%;
+  }
+
+.list-group-item{
+  background: rgba(105,101,101,.6);
+  color: #fff;  
+}
+
+.geshi1{
+   font-size: 0.8rem;
+   margin: 1rem 0;
+   display: block;
+   font-weight: 100;
+  color: black;
+}
+
+.geshi1:hover{
+  color: orange;
+  text-decoration: none;
+}
+
+#button2{
+  width: 45%;
+  height:2rem;
+  border:1px solid orange;
+  background: #fff;
+  display: block;
+  color: orange;
+  text-align: center;
+  line-height: 2rem;
+  cursor: pointer;
+  margin: 0 0 0 28%;
+}
+#button2:hover{
+  background: orange;
+  color: #fff;
+}
+
+.info-text{
+  font-size: 0.8rem;
+  font-weight: 100;
+  color: black;
+}
+.sites a{
+  font-size: 0.8rem;
+  font-weight: 200;
+  color: black;
+}
+#information a{
+  font-size: 0.8rem;
+  font-weight: 100;
+  color: black;
+}
+.sites a:hover{
+  color: orange;
+  text-decoration: none;
+}
+#information a:hover{
+  color: orange;
+  text-decoration: none;
+}
+.sep{
+   font-size: 0.5rem;
+   font-weight: 100;
+  color: #ccc;
+}
+#slogan{
+  font-size: 1.5rem;
+  color: #ccc;
+  font-weight: 200;
+  text-align: center;
+}
+
+  </style>
+<body>
+    <div class="row bg-dark">
+          <div class="col-lg-11 offset-lg-1">
+              <nav class="navbar navbar-expand-lg navbar-dark">
+                <!-- Toggler/collapsibe Button -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>   
+                <!-- Navbar links -->
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                  <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">小米商城
+                      </a>                     
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">MIUI</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">IoT</a>
+                    </li> 
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">云服务</a>
+                    </li> 
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">金融</a>
+                    </li> 
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">有品</a>
+                    </li> 
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">小爱开放平台</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">企业团购</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">资质证照</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">协议规则</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">下载app</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">SelectLocation</a>
+                    </li>
+                  </ul>               
+                </div>
+
+             <div class="collapse navbar-collapse">
+                <ul class="navbar-nav justify-content-end">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">登录
+                        </a>                     
+                    </li>
+                    <li class="nav-item">
+                       <a class="nav-link" href="#">注册</a>
+                    </li>
+                    <li class="nav-item">
+                       <a class="nav-link" href="#">消息通知</a>
+                    </li> 
+                    <li class="nav-item">                      
+                        <a class="nav-link" href="#" id="shopping">购物车（0）</a>
+                     </li> 
+                </ul>    
+            </nav>
+        </div>
+      </div>
+
+      <div class="row" style="margin: 1rem 0;">
+        <div class="col-4 offset-lg-1 col-lg-1 col-md-4 col-sm-5">
+            <a class="navbar-brand" href="#">
+                <img src="image/logo.png" alt="logo"id="image1">
+            </a>
+        </div>
+        <div class="col-lg-6 d-lg-block d-md-none d-sm-none d-none">
+          <ul class="nav" style="font-size:1.2rem;">
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="acolor">小米手机</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="acolor">Redmi 红米</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="acolor">电视</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="acolor">笔记本</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="acolor"> 家电</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="acolor">路由器</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="acolor">智能硬件</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="acolor"> 服务</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="acolor">社区</a>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="col-7 col-lg-3 col-md-6 col-sm-6 col-xl-2 offset-6 offset-sm-6 offset-md-6" id="sousuo">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search">
+                <div class="input-group-append">
+                    <a type="button" href="#">
+                        <img src="image/sousuo1.png" id="image2">
+                      </a>  
+                </div> 
+            </div>
+          </div>
+    </div>
+
+    <div class="row" style="margin: 1rem 0;">
+        <div class="col-lg-2 offset-lg-1 d-lg-block d-md-none d-sm-none d-none" style="padding:0;">
+            <div class="list-group">
+                <a href="#" class="list-group-item">手机 电话卡
+                  <span class="float-lg-right">></span>
+                </a>
+                <a href="#"  class="list-group-item">电视 盒子
+                    <span class="float-lg-right">></span>
+                </a>
+                <a href="#"  class="list-group-item">笔记本 平板
+                    <span class="float-lg-right">></span>
+                </a>
+                <a href="#"  class="list-group-item">家电 插线板
+                    <span class="float-lg-right">></span>
+                </a>
+                <a href="#"  class="list-group-item">出行 穿戴
+                    <span class="float-lg-right">></span>
+                </a>
+                <a href="#"  class="list-group-item">智能 路由器
+                    <span class="float-lg-right">></span>
+                </a>
+                <a href="#"  class="list-group-item">电源 配件
+                    <span class="float-lg-right">></span>
+                </a>
+                <a href="#"  class="list-group-item">健康 儿童
+                    <span class="float-lg-right">></span>
+                </a>
+                <a href="#"  class="list-group-item">耳机 音响
+                    <span class="float-lg-right">></span>
+                </a>
+                <a href="#"  class="list-group-item">生活 箱包
+                    <span class="float-lg-right">></span>
+                </a>
+              </ul>
+            </div>
+        </div>
+
+        <div class="col-lg-7"  style="padding:0;">
+            <div id="demo" class="carousel slide" data-ride="carousel" style="height: 100%;width:100%;"> 
+                <!-- 指示符 -->
+                <ul class="carousel-indicators">
+                  <li data-target="#demo" data-slide-to="0" class="active"></li>
+                  <li data-target="#demo" data-slide-to="1"></li>
+                  <li data-target="#demo" data-slide-to="2"></li>
+                  <li data-target="#demo" data-slide-to="3"></li>
+                  <li data-target="#demo" data-slide-to="4"></li>
+                </ul>               
+                <!-- 轮播图片 -->
+                <div class="carousel-inner"  style="height: 100%;width:100%;">
+                  <div class="carousel-item active" style="height: 100%;width:100%;">
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d5fa97e585fe91dcdbe51e44ba66ce4c.jpg?w=2452&h=920">
+                  </div>
+                  <div class="carousel-item" style="height: 100%;width:100%;">
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/056576955e6b8a936bbea4e3fc728a4b.jpg?thumb=1&w=1226&h=460&f=webp&q=90">
+                  </div>
+                  <div class="carousel-item" style="height: 100%;width:100%;">
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ca5140dd0f3f9ae526d33e7693f71592.jpg?thumb=1&w=1226&h=460&f=webp&q=90">
+                  </div>
+                  <div class="carousel-item" style="height: 100%;width:100%;">
+                      <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/5f8d27f0498561818146b7ef78392f33.jpg?thumb=1&w=1226&h=460&f=webp&q=90">
+                    </div>
+                    <div class="carousel-item" style="height: 100%;width:100%;">
+                        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/64070c0d2b1e6b69316c7b9fc9d3ec50.jpg?thumb=1&w=1226&h=460&f=webp&q=90">
+                      </div>
+                </div>               
+                <!-- 左右切换按钮 -->
+                <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                  <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#demo" data-slide="next">
+                  <span class="carousel-control-next-icon"></span>
+                </a>               
+              </div>
+        </div>
+     </div>
+
+
+     <div class="row" style="margin: 1rem 0;">
+        <div class="card img-fluid col-lg-2 offset-lg-1 col-md-3 col-sm-6 col-12" style="border: 0; margin-top: 1rem;">
+            <img class="card-img-top" src="image/jie1.png" alt="Card image" style="width:100%;height: 100%;">
+        </div>
+        <div class="card img-fluid col-lg-2 col-md-3 col-sm-6 col-12" style="border: 0;margin-top: 1rem;">
+            <img class="card-img-top" src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/37d52be5170e1b25d30ff44db4b0791c.jpg?w=632&h=340" alt="Card image" style="width:100%;height: 100%;">
+    
+          </div>
+          <div class="card img-fluid col-lg-2 col-md-3 col-sm-6 col-12" style="border: 0;margin-top: 1rem;">
+              <img class="card-img-top" src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/e7b51b721c3319e9c2916cc41cd9c695.jpg?w=632&h=340" alt="Card image" style="width:100%;height: 100%;">
+      
+          </div>
+          <div class="card img-fluid col-lg-2 col-md-3 col-sm-6 col-12" style="border: 0;margin-top: 1rem;">
+              <img class="card-img-top" src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/816a66edef10673b4768128b41804cae.jpg?w=632&h=340" alt="Card image" style="width:100%;height: 100%;">
+      
+            </div>
+     </div>
+
+     <div class="row" style="margin: 2rem 0;">
+        <div class="col-lg-1 offset-lg-1 d-lg-block d-none d-md-none d-sm-none">
+                   <h6 style="font-weight: 350;margin:1rem 0;">帮助中心</h6>
+                   <a href="#" class="geshi1">账户管理</a>
+                   <a href="#" class="geshi1">购物指南</a>
+                   <a href="#" class="geshi1">订单操作</a>
+        </div>
+         <div class="col-lg-1 d-lg-block d-none d-md-none d-sm-none">
+            <h6 style="font-weight: 350;margin:1rem 0;">服务支持</h6>
+            <a href="#" class="geshi1">售后政策</a>
+            <a href="#" class="geshi1">自助服务</a>
+            <a href="#" class="geshi1">相关下载</a>
+         </div>
+         <div class="col-lg-1 d-lg-block d-none d-md-none d-sm-none">
+            <h6 style="font-weight: 350;margin:1rem 0;">线下门店</h6>
+            <a href="#" class="geshi1">小米之家</a>
+            <a href="#" class="geshi1">服务网点</a>
+            <a href="#" class="geshi1">授权体验店</a>
+         </div>
+         <div class="col-lg-1 d-lg-block d-none d-md-none d-sm-none">
+            <h6 style="font-weight: 350;margin:1rem 0;">关于小米</h6>
+            <a href="#" class="geshi1">了解小米</a>
+            <a href="#" class="geshi1">加入小米</a>
+            <a href="#" class="geshi1">投资者关系</a>
+         </div>
+         <div class="col-lg-1 d-lg-block d-none d-md-none d-sm-none">
+            <h6 style="font-weight: 350;margin:1rem 0;">关注我们</h6>
+            <a href="#" class="geshi1"> 新浪微博</a>
+            <a href="#" class="geshi1">官方微信</a>
+            <a href="#" class="geshi1">联系我们</a>
+         </div>
+         <div class="col-lg-2 d-lg-block d-none d-md-none d-sm-none">
+            <h6 style="font-weight: 350;margin:1rem 0;">特色服务</h6>
+            <a href="#" class="geshi1">F 码通道</a>
+            <a href="#" class="geshi1">礼物码</a>
+            <a href="#" class="geshi1">防伪查询</a>
+            
+         </div>
+         <div class="float-lg-right d-lg-block d-none d-md-none d-sm-none">
+            <div style="background: #ccc;width: 1px;height: 100%;"></div>
+         </div>
+        
+         <div  class="col-lg-2" style="text-align:center;padding:1rem 0 0 0;">
+            <h3 style="color: orange;">400-100-5678</h3>
+            <span>周一至周日 8:00-18:00</span><br>
+            <span>（仅收市话费）</span><br>
+            <a id="button2">人工客服</a>
+         </div>
+     </div>
+
+     <div class="row" style="margin: 2rem 0;">
+        <div class="offset-lg-1 col-lg-1 d-lg-block d-md-none d-none d-sm-none">
+            <a href="#">
+                <img src="image/logo.png" alt="logo">
+            </a>
+        </div>
+        <div class="col-lg-9">
+          <div class="info-text">
+              <span class="sites">
+                  <a rel="nofollow" href="//www.mi.com/index.html" target="_blank" data-stat-id="4bc9b84ee8285a77" onclick="_msq.push(['trackEvent', '81190ccc4d52f577-4bc9b84ee8285a77', '//www.mi.com/index.html', 'pcpid', '']);">
+                    小米商城
+                  </a> 
+                  <span class="sep">|</span> 
+                  <a rel="nofollow" href="https://www.miui.com/" target="_blank" data-stat-id="d1077e912318a8aa" onclick="_msq.push(['trackEvent', '81190ccc4d52f577-d1077e912318a8aa', 'https://www.miui.com/', 'pcpid', '']);">MIUI</a>
+                  <span class="sep">|</span> 
+                  <a rel="nofollow" href="https://home.mi.com/index.html" target="_blank" data-stat-id="bf8fb9978f16ecd7" onclick="_msq.push(['trackEvent', '81190ccc4d52f577-bf8fb9978f16ecd7', 'https://home.mi.com/index.html', 'pcpid', '']);">米家</a>
+                  <span class="sep">|</span>
+                  <a rel="nofollow" href="http://www.miliao.com/" target="_blank" data-stat-id="8fa92518f4f4139b" onclick="_msq.push(['trackEvent', '81190ccc4d52f577-8fa92518f4f4139b', 'http://www.miliao.com/', 'pcpid', '']);">米聊</a> 
+                  <span class="sep">|</span>
+                  <a rel="nofollow" href="https://www.duokan.com/" target="_blank" data-stat-id="d0e7b344070ce805" onclick="_msq.push(['trackEvent', '81190ccc4d52f577-d0e7b344070ce805', 'https://www.duokan.com/', 'pcpid', '']);">多看</a> 
+                  <span class="sep">|</span>
+                  <a rel="nofollow" href="http://game.xiaomi.com/" target="_blank" data-stat-id="d14f6094510ae91d" onclick="_msq.push(['trackEvent', '81190ccc4d52f577-d14f6094510ae91d', 'http://game.xiaomi.com/', 'pcpid', '']);">游戏</a>
+                  <span class="sep">|</span>
+                  <a rel="nofollow" href="http://www.miwifi.com/" target="_blank" data-stat-id="89c8a04b65d5a2cc" onclick="_msq.push(['trackEvent', '81190ccc4d52f577-89c8a04b65d5a2cc', 'http://www.miwifi.com/', 'pcpid', '']);">路由器</a> 
+                  <span class="sep">|</span> 
+                  <a rel="nofollow" href="//www.mi.com/micard/" target="_blank" data-stat-id="8383fc54e821723e" onclick="_msq.push(['trackEvent', '81190ccc4d52f577-8383fc54e821723e', '//www.mi.com/micard/', 'pcpid', '']);">米粉卡</a> 
+                  <span class="sep">|</span> 
+                  <a rel="nofollow" href="https://b.mi.com/?client_id=180100031058&amp;masid=17409.0358" target="_blank" data-stat-id="d4e20cb7bc05f0ca" onclick="_msq.push(['trackEvent', '81190ccc4d52f577-d4e20cb7bc05f0ca', 'https://b.mi.com/client_id=180100031058&amp;masid=17409.0358', 'pcpid', '']);">政企服务</a> 
+                  <span class="sep">|</span> 
+                  <a rel="nofollow" href="https://xiaomi.tmall.com/" target="_blank" data-stat-id="6e21be38e4356064" onclick="_msq.push(['trackEvent', '81190ccc4d52f577-6e21be38e4356064', 'https://xiaomi.tmall.com/', 'pcpid', '']);">小米天猫店</a> 
+                  <span class="sep">|</span> 
+                  <a rel="nofollow" href="//privacy.mi.com/all/zh_CN/" target="_blank" data-stat-id="158576437b9b96c3" onclick="_msq.push(['trackEvent', '81190ccc4d52f577-158576437b9b96c3', '//privacy.mi.com/all/zh_CN/', 'pcpid', '']);">小米集团隐私政策</a> 
+                  <span class="sep">|</span> 
+                  <a rel="nofollow" href="//cdn.cnbj1.fds.api.mi-img.com/mi-mall/ded8d0e4a77d.html" target="_blank" data-stat-id="3f159cf3a67c59a4" onclick="_msq.push(['trackEvent', '81190ccc4d52f577-3f159cf3a67c59a4', '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/ded8d0e4a77d.html', 'pcpid', '']);">小米商城隐私政策</a> 
+                  <span class="sep">|</span> 
+                  <a rel="nofollow" href="//www.mi.com/about/user-agreement/" target="_blank" data-stat-id="41adfd81b7d2e91e" onclick="_msq.push(['trackEvent', '81190ccc4d52f577-41adfd81b7d2e91e', '//www.mi.com/about/user-agreement/', 'pcpid', '']);">小米商城用户协议</a> 
+                  <span class="sep">|</span> 
+                  <a rel="nofollow" href="//static.mi.com/feedback/" target="_blank" data-stat-id="f0c36f7995bd26c1" onclick="_msq.push(['trackEvent', '81190ccc4d52f577-f0c36f7995bd26c1', '//static.mi.com/feedback/', 'pcpid', '']);">问题反馈</a> 
+                  <span class="sep">|</span> 
+                  <a rel="nofollow" href="//www.mi.com/jiancha/" target="_blank" data-stat-id="f5ca8a00d46ba8a6" onclick="_msq.push(['trackEvent', '81190ccc4d52f577-f5ca8a00d46ba8a6', '//www.mi.com/jiancha/', 'pcpid', '']);">廉正举报</a> 
+                  <span class="sep">|</span> 
+                  <a rel="nofollow" href="https://integrity.mi.com/" target="_blank" data-stat-id="73b66047a8941cf8" onclick="_msq.push(['trackEvent', '81190ccc4d52f577-73b66047a8941cf8', 'https://integrity.mi.com/', 'pcpid', '']);">诚信合规</a> 
+                  <span class="sep">|</span> 
+                  <a rel="nofollow" href="javascript:void(0);" class="J_siteGlobalRegion" data-stat-id="0198961fb39e8aa3" onclick="_msq.push(['trackEvent', '81190ccc4d52f577-0198961fb39e8aa3', 'javascript:void0', 'pcpid', '']);">Select Location</a>
+                </span><br>
+                <span id="information">
+                    ©
+                  <a href=" " target="_blank" title="mi.com" data-stat-id="bdfd116c84984884" onclick="_msq.push(['trackEvent', '81190ccc4d52f577-bdfd116c84984884', '', 'pcpid', '']);">mi.com</a> 
+                  京ICP证110507号
+                  <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow" data-stat-id="09f3ca7af7fc3710" onclick="_msq.push(['trackEvent', '81190ccc4d52f577-09f3ca7af7fc3710', 'http://beian.miit.gov.cn/', 'pcpid', '']);">京ICP备10046444号</a> 
+                  <a rel="nofollow" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802020134" target="_blank" data-stat-id="e9d2688beb41458a" onclick="_msq.push(['trackEvent', '81190ccc4d52f577-e9d2688beb41458a', 'http://www.beian.gov.cn/portal/registerSystemInforecordcode=11010802020134', 'pcpid', '']);">京公网安备11010802020134号 </a> 
+                  <a href="//www.mi.com/culture-license/" target="_blank" data-stat-id="059ce48ed7ed6a36" onclick="_msq.push(['trackEvent', '81190ccc4d52f577-059ce48ed7ed6a36', '//www.mi.com/culture-license/', 'pcpid', '']);">京网文[2017]1530-131号</a> <br> 
+                  <a href="//www.mi.com/medical/record/" target="_blank" data-stat-id="97cdd5ee52424ea3" onclick="_msq.push(['trackEvent', '81190ccc4d52f577-97cdd5ee52424ea3', '//www.mi.com/medical/record/', 'pcpid', '']);">（京）网械平台备字（2018）第00005号</a> 
+                  <a href="//www.mi.com/medical/qualification/" target="_blank" data-stat-id="f4696bf96a52cdae" onclick="_msq.push(['trackEvent', '81190ccc4d52f577-f4696bf96a52cdae', '//www.mi.com/medical/qualification/', 'pcpid', '']);">互联网药品信息服务资格证 (京) -非经营性-2014-0090</a> 
+                  <a href="//www.mi.com/business-license/" target="_blank" data-stat-id="3ed1ade2d90f5e8a" onclick="_msq.push(['trackEvent', '81190ccc4d52f577-3ed1ade2d90f5e8a', '//www.mi.com/business-license/', 'pcpid', '']);">营业执照</a> <a href="//www.mi.com/medical/list/" target="_blank" data-stat-id="5186b38734e64ad1" onclick="_msq.push(['trackEvent', '81190ccc4d52f577-5186b38734e64ad1', '//www.mi.com/medical/list/', 'pcpid', '']);">医疗器械公告</a> <br> <a href="//cdn.cnbj1.fds.api.mi-img.com/mi-mall/af5b8ef38e7d57c5ee7fa4289ccf4df8.png" target="_blank" data-stat-id="22eb6b5cf4b462d7" onclick="_msq.push(['trackEvent', '81190ccc4d52f577-22eb6b5cf4b462d7', '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/af5b8ef38e7d57c5ee7fa4289ccf4df8.png', 'pcpid', '']);">增值电信业务许可证</a>&nbsp;
+                  网络食品经营备案（京）【2018】WLSPJYBAHF-12  &nbsp;
+                  <a href="//cdn.cnbj1.fds.api.mi-img.com/mi-mall/fe7383e11127caea371f17156f429a1e.png" target="_blank" data-stat-id="911257f4cef77495" onclick="_msq.push(['trackEvent', '81190ccc4d52f577-911257f4cef77495', '//cdn.cnbj1.fds.api.mi-img.com/mi-mall/fe7383e11127caea371f17156f429a1e.png', 'pcpid', '']);">食品经营许可证</a> <br>违法和不良信息举报电话：185-0130-1238 <a href="https://www.mi.com/static/intellectual/index.html" target="_blank" data-stat-id="1f66dd3b1b0f7218" onclick="_msq.push(['trackEvent', '81190ccc4d52f577-1f66dd3b1b0f7218', 'https://www.mi.com/static/intellectual/index.html', 'pcpid', '']);">知识产权侵权投诉</a> 本网站所列数据，除特殊说明，所有数据均出自我司实验室测试
+                </span>
+                <div class="info-links">
+                    <a>
+                       <img rel="nofollow" src="image/truste.jpg" alt="隐私认证">
+                    </a> 
+                    <a rel="nofollow" href="//search.szfw.org/cert/l/CX20120926001783002010" target="_blank" data-stat-id="f0877449bc91038d" onclick="_msq.push(['trackEvent', '81190ccc4d52f577-f0877449bc91038d', '//search.szfw.org/cert/l/CX20120926001783002010', 'pcpid', '']);">
+                      <img rel="nofollow" src="https://s01.mifile.cn/i/v-logo-2.png" alt="诚信网站">
+                    </a> 
+                    <a rel="nofollow" href="https://ss.knet.cn/verifyseal.dll?sn=e12033011010015771301369&amp;ct=df&amp;pa=461082" target="_blank" data-stat-id="2173f8773b3dc666" onclick="_msq.push(['trackEvent', '81190ccc4d52f577-2173f8773b3dc666', 'https://ss.knet.cn/verifyseal.dllsn=e12033011010015771301369&amp;ct=df&amp;pa=461082', 'pcpid', '']);">
+                        <img rel="nofollow" src="https://s01.mifile.cn/i/v-logo-1.png" alt="可信网站">
+                    </a> 
+                    <a rel="nofollow" href="http://www.315online.com.cn/member/315140007.html" target="_blank" data-stat-id="d2aa5eabb354499e" onclick="_msq.push(['trackEvent', '81190ccc4d52f577-d2aa5eabb354499e', 'http://www.315online.com.cn/member/315140007.html', 'pcpid', '']);">
+                        <img rel="nofollow" src="https://s01.mifile.cn/i/v-logo-3.png" alt="网上交易保障中心">
+                    </a> 
+                    <a rel="nofollow" href="https://www.mi.com/service/buy/commitment/" target="_blank" data-stat-id="075070cd3386be85" onclick="_msq.push(['trackEvent', '81190ccc4d52f577-075070cd3386be85', 'https://www.mi.com/service/buy/commitment/', 'pcpid', '']);">
+                        <img rel="nofollow" src="https://i8.mifile.cn/b2c-mimall-media/ba10428a4f9495ac310fd0b5e0cf8370.png" alt="诚信经营 放心消费">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+     </div>
+
+     <div class="row" style="margin: 1rem 0;">
+        <div class="col-lg-9 offset-lg-1" id="slogan">
+          探索黑科技，小米为发烧而生!
+        </div>
+     </div>
+
+</body>
+</html>
