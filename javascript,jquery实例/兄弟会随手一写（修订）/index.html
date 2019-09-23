@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<title>沈阳兄弟会js小练习</title>
+		<style>
+			html, body {
+				height: 100%;
+			}
+
+			body {
+				background-color: #000000;
+				margin: 0;
+				font-family: Arial;
+				overflow: hidden;
+			}
+
+			a {
+				color: #ffffff;
+			}
+
+			#info {
+				position: absolute;
+				width: 100%;
+				color: #ffffff;
+				padding: 5px;
+				font-family: Monospace;
+				font-size: 13px;
+				font-weight: bold;
+				text-align: center;
+				z-index: 1;
+			}
+
+			#menu {
+				position: absolute;
+				bottom: 20px;
+				width: 100%;
+				text-align: center;
+			}
+
+			.element {
+				width: 120px;
+				height: 160px;
+				box-shadow: 0px 0px 12px rgba(0,255,255,0.5);
+				border: 1px solid rgba(127,255,255,0.25);
+				text-align: center;
+				cursor: default;
+			}
+
+			.element:hover {
+				box-shadow: 0px 0px 12px rgba(0,255,255,0.75);
+				border: 1px solid rgba(127,255,255,0.75);
+			}
+
+				
+				.element .symbol {
+					position: absolute;
+					top: 40px;
+					left: 0px;
+					right: 0px;
+					font-size: 60px;
+					font-weight: bold;
+					color: rgba(255,255,255,0.75);
+
+					-webkit-filter: drop-shadow(0px 0px 20px rgba(0,255,255,0.95));
+					-moz-filter: drop-shadow(0px 0px 20px rgba(0,255,255,0.95));
+					-o-filter: drop-shadow(0px 0px 20px rgba(0,255,255,0.95));
+					-ms-filter: drop-shadow(0px 0px 20px rgba(0,255,255,0.95));
+					filter: drop-shadow(0px 0px 20px rgba(0,255,255,0.95));
+				}
+
+				.element .details {
+					position: absolute;
+					bottom: 15px;
+					left: 0px;
+					right: 0px;
+					font-size: 12px;
+					color: rgba(127,255,255,0.75);
+				}
+
+			button {
+				color: rgba(127,255,255,0.75);
+				background: transparent;
+				outline: 1px solid rgba(127,255,255,0.75);
+				border: 0px;
+				padding: 5px 10px;
+				cursor: pointer;
+			}
+			button:hover {
+				background-color: rgba(0,255,255,0.5);
+			}
+			button:active {
+				color: #000000;
+				background-color: rgba(0,255,255,0.75);
+			}
+		</style>
+		<style>
+			img{
+				/*background-color: rgba(0, 127, 127, 0.518); */
+				position: absolute; 
+				transform-style: preserve-3d; 
+				transform: translate3d(-50%, -50%, 0px) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, -49, 0, 1);
+				width:122px;
+				height:162px;
+			}
+		</style>
+	</head>
+	<body>
+		<script src="js/three.min.js"></script>
+		<script src="js/tween.min.js"></script>
+		<script src="js/TrackballControls.js"></script>
+		<script src="js/CSS3DRenderer.js"></script>
+
+		<div id="container"></div>
+	
+		<div id="menu">
+			<button id="table">TABLE</button>
+			<button id="sphere">SPHERE</button>
+			<button id="helix">HELIX</button>
+			<button id="grid">GRID</button>
+		</div>
+
+		<script>
+			
+			var table = [
+				"", "<img src='/images/1.jpg' >", "", 1, 1,
+				"", "<img src='/images/2.jpg' >", "", 18, 1,
+				"", "<img src='/images/3.jpg' >", "", 1, 2,
+				"", "<img src='/images/4.jpg' >", "", 2, 2,
+				"", "<img src='/images/5.jpg' >", "", 13, 2,
+				"", "<img src='/images/6.jpg' >", "", 14, 2,
+				"", "<img src='/images/7.jpg' >", "", 15, 2,
+				"", "<img src='/images/8.jpg' >", "", 16, 2,
+				"", "<img src='/images/9.jpg' >", "", 17, 2,
+				"", "<img src='/images/10.jpg' >", "", 18, 2,
+				"", "<img src='/images/11.jpg' >", "", 1, 3,
+				"", "<img src='/images/12.jpg' >", "", 2, 3,
+				"", "<img src='/images/13.jpg' >", "", 13, 3,
+				"", "<img src='/images/14.jpg' >", "", 14, 3,
+				"", "<img src='/images/15.jpg' >", "", 15, 3,
+				"", "<img src='/images/16.jpg' >", "", 16, 3,
+				"", "<img src='/images/17.jpg' >", "", 17, 3,
+				"", "<img src='/images/18.jpg' >", "", 18, 3,
+				"", "<img src='/images/19.jpg' >", "", 1, 4,
+				"", "<img src='/images/20.jpg' >", "", 2, 4,
+				"", "<img src='/images/21.jpg' >", "", 3, 4,
+				"", "<img src='/images/22.jpg' >", "", 4, 4,
+				"", "<img src='/images/23.jpg' >", "", 5, 4,
+				"", "<img src='/images/24.jpg' >", "", 6, 4,
+				"", "<img src='/images/25.jpg' >", "", 7, 4,
+				"", "<img src='/images/26.jpg' >", "", 8, 4,
+				"", "<img src='/images/27.jpg' >", "", 9, 4,
+				"", "<img src='/images/28.jpg' >", "", 10, 4,
+				"", "<img src='/images/29.jpg' >", "", 11, 4,
+				"", "<img src='/images/30.jpg' >", "", 12, 4,
+				"", "<img src='/images/31.jpg' >", "", 13, 4,
+				"", "<img src='/images/32.jpg' >", "", 14, 4,
+				"", "<img src='/images/33.jpg' >", "", 15, 4,
+				"", "<img src='/images/34.jpg' >", "", 16, 4,
+				"", "<img src='/images/35.jpg' >", "", 17, 4,
+				"", "<img src='/images/36.jpg' >", "", 18, 4,
+				"", "<img src='/images/37.jpg' >", "", 1, 5,
+				"", "<img src='/images/38.jpg' >", "", 2, 5,
+				"", "<img src='/images/39.jpg' >", "", 3, 5,
+				"", "<img src='/images/40.jpg' >", "", 4, 5,
+				"", "<img src='/images/41.jpg' >", "", 5, 5,
+				"", "<img src='/images/42.jpg' >", "", 6, 5,
+				"", "<img src='/images/43.jpg' >", "", 7, 5,
+				"", "<img src='/images/44.jpg' >", "", 8, 5,
+				"", "<img src='/images/45.jpg' >", "", 9, 5,
+				"", "<img src='/images/46.jpg' >", "", 10, 5,
+				"", "<img src='/images/47.jpg' >", "", 11, 5,
+				"", "<img src='/images/48.jpg' >", "", 12, 5,
+				"", "<img src='/images/49.jpg' >", "", 13, 5,
+				"", "<img src='/images/50.jpg' >", "", 14, 5,
+				"", "<img src='/images/51.jpg' >", "", 15, 5,
+				"", "<img src='/images/52.jpg' >", "", 16, 5,
+				"", "<img src='/images/53.jpg' >", "", 17, 5,
+				"", "<img src='/images/54.jpg' >", "", 18, 5,
+				"", "<img src='/images/55.jpg' >", "", 1, 6,
+				"", "<img src='/images/56.jpg' >", "", 2, 6,
+				"", "<img src='/images/57.jpg' >", "", 4, 9,
+				"", "<img src='/images/58.jpg' >", "", 5, 9,
+				"", "<img src='/images/59.jpg' >", "", 6, 9,
+				"", "<img src='/images/60.jpg' >", "", 7, 9,
+				"", "<img src='/images/61.jpg' >", "", 8, 9,
+				"", "<img src='/images/62.jpg' >", "", 9, 9,
+				"", "<img src='/images/63.jpg' >", "", 10, 9,
+				"", "<img src='/images/64.jpg' >", "", 11, 9,
+				"", "<img src='/images/65.jpg' >", "", 12, 9,
+				"", "<img src='/images/66.jpg' >", "", 13, 9,
+				"", "<img src='/images/67.jpg' >", "", 14, 9,
+				"", "<img src='/images/68.jpg' >", "", 15, 9,
+				"", "<img src='/images/69.jpg' >", "", 16, 9,
+				"", "<img src='/images/70.jpg' >", "", 17, 9,
+				"", "<img src='/images/71.jpg' >", "", 18, 9,
+				"", "<img src='/images/72.jpg' >", "", 4, 6,
+				"", "<img src='/images/73.jpg' >", "", 5, 6,
+				"", "<img src='/images/74.jpg' >", "", 6, 6,
+				"", "<img src='/images/75.jpg' >", "", 7, 6,
+				"", "<img src='/images/76.jpg' >", "", 8, 6,
+				"", "<img src='/images/77.jpg' >", "", 9, 6,
+				"", "<img src='/images/78.jpg' >", "", 10, 6,
+				"", "<img src='/images/79.jpg' >", "", 11, 6,
+				"", "<img src='/images/80.jpg' >", "", 12, 6,
+				"", "<img src='/images/81.jpg' >", "", 13, 6,
+				"", "<img src='/images/82.jpg' >", "", 14, 6,
+				"", "<img src='/images/83.jpg' >", "", 15, 6,
+				"", "<img src='/images/84.jpg' >", "", 16, 6,
+				"", "<img src='/images/85.jpg' >", "", 17, 6,
+				"", "<img src='/images/86.jpg' >", "", 18, 6,
+				"", "<img src='/images/87.jpg' >", "", 1, 7,
+				"", "<img src='/images/88.jpg' >", "", 2, 7,
+				"", "<img src='/images/89.jpg' >", "", 4, 10,
+				"", "<img src='/images/90.jpg' >", "", 5, 10,
+				"", "<img src='/images/91.jpg' >", "", 6, 10,
+				"", "<img src='/images/92.jpg' >", "", 7, 10,
+				"", "<img src='/images/93.jpg' >", "", 8, 10,
+				"", "<img src='/images/94.jpg' >", "", 9, 10,
+				"", "<img src='/images/95.jpg' >", "", 10, 10,
+				"", "<img src='/images/96.jpg' >", "", 11, 10,
+				"", "<img src='/images/97.jpg' >", "", 12, 10,
+				"", "<img src='/images/98.jpg' >", "", 13, 10,
+				"", "<img src='/images/99.jpg' >", "", 14, 10,
+				"", "<img src='/images/100.jpg' >", "", 15, 10,
+				"", "<img src='/images/101.jpg' >", "", 16, 10,
+				"", "<img src='/images/102.jpg' >", "", 17, 10,
+				"", "<img src='/images/103.jpg' >", "", 18, 10,
+				"", "<img src='/images/104.jpg' >", "", 4, 7,
+				"", "<img src='/images/105.jpg' >", "", 5, 7,
+				"", "<img src='/images/106.jpg' >", "", 6, 7,
+				"", "<img src='/images/107.jpg' >", "", 7, 7,
+				"", "<img src='/images/108.jpg' >", "", 8, 7,
+				"", "<img src='/images/109.jpg' >", "", 9, 7,
+				"", "<img src='/images/110.jpg' >", "", 10, 7,
+				"", "<img src='/images/111.jpg' >", "", 11, 7,
+				"", "<img src='/images/112.jpg' >", "", 12, 7,
+				"", "<img src='/images/113.jpg' >", "", 13, 7,
+				"", "<img src='/images/114.jpg' >", "", 14, 7,
+				"", "<img src='/images/115.jpg' >", "", 15, 7,
+				"", "<img src='/images/116.jpg' >", "", 16, 7,
+				"", "<img src='/images/117.jpg' >", "", 17, 7,
+				"", "<img src='/images/118.jpg' >", "", 18, 7
+			];
+			var camera, scene, renderer;
+			var controls;
+
+			var objects = [];
+			var targets = { table: [], sphere: [], helix: [], grid: [] };
+
+			init();
+			animate();
+
+			function init() {
+
+				camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 5000 );
+				camera.position.z = 1500;
+
+				scene = new THREE.Scene();
+
+				// table
+
+				for ( var i = 0; i < table.length; i += 5 ) {
+
+					var element = document.createElement( 'div' );
+					element.className = 'element';
+					// element.style.backgroundColor = 'rgba(0,127,127,' + ( Math.random() * 0.5 + 0.25 ) + ')';
+
+
+					var symbol = document.createElement( 'div' );
+					symbol.className = 'symbol';
+					symbol.textContent = table[ i ];
+					element.appendChild( symbol );
+
+					var details = document.createElement( 'div' );
+					details.className = 'details';
+					details.innerHTML = table[ i + 1 ] + '<br>' + table[ i + 2 ];
+					element.appendChild( details );
+
+					var object = new THREE.CSS3DObject( element );
+					object.position.x = Math.random() * 4000 - 2000;
+					object.position.y = Math.random() * 4000 - 2000;
+					object.position.z = Math.random() * 4000 - 2000;
+					scene.add( object );
+
+					objects.push( object );
+
+					//
+
+					var object = new THREE.Object3D();
+					object.position.x = ( table[ i + 3 ] * 140 ) - 1330;
+					object.position.y = - ( table[ i + 4 ] * 180 ) + 990;
+
+					targets.table.push( object );
+
+				}
+
+				// sphere
+
+				var vector = new THREE.Vector3();
+
+				for ( var i = 0, l = objects.length; i < l; i ++ ) {
+
+					var phi = Math.acos( -1 + ( 2 * i ) / l );
+					var theta = Math.sqrt( l * Math.PI ) * phi;
+
+					var object = new THREE.Object3D();
+
+					object.position.x = 800 * Math.cos( theta ) * Math.sin( phi );
+					object.position.y = 800 * Math.sin( theta ) * Math.sin( phi );
+					object.position.z = 800 * Math.cos( phi );
+
+					vector.copy( object.position ).multiplyScalar( 2 );
+
+					object.lookAt( vector );
+
+					targets.sphere.push( object );
+
+				}
+
+				// helix
+
+				var vector = new THREE.Vector3();
+
+				for ( var i = 0, l = objects.length; i < l; i ++ ) {
+
+					var phi = i * 0.175 + Math.PI;
+
+					var object = new THREE.Object3D();
+
+					object.position.x = 900 * Math.sin( phi );
+					object.position.y = - ( i * 8 ) + 450;
+					object.position.z = 900 * Math.cos( phi );
+
+					vector.x = object.position.x * 2;
+					vector.y = object.position.y;
+					vector.z = object.position.z * 2;
+
+					object.lookAt( vector );
+
+					targets.helix.push( object );
+
+				}
+
+				// grid
+
+				for ( var i = 0; i < objects.length; i ++ ) {
+
+					var object = new THREE.Object3D();
+
+					object.position.x = ( ( i % 5 ) * 400 ) - 800;
+					object.position.y = ( - ( Math.floor( i / 5 ) % 5 ) * 400 ) + 800;
+					object.position.z = ( Math.floor( i / 25 ) ) * 1000 - 2000;
+
+					targets.grid.push( object );
+
+				}
+
+				//
+
+				renderer = new THREE.CSS3DRenderer();
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				renderer.domElement.style.position = 'absolute';
+				document.getElementById( 'container' ).appendChild( renderer.domElement );
+
+				//
+
+				controls = new THREE.TrackballControls( camera, renderer.domElement );
+				controls.rotateSpeed = 0.5;
+				controls.addEventListener( 'change', render );
+
+				var button = document.getElementById( 'table' );
+				button.addEventListener( 'click', function ( event ) {
+
+					transform( targets.table, 2000 );
+
+				}, false );
+
+				var button = document.getElementById( 'sphere' );
+				button.addEventListener( 'click', function ( event ) {
+
+					transform( targets.sphere, 2000 );
+
+				}, false );
+
+				var button = document.getElementById( 'helix' );
+				button.addEventListener( 'click', function ( event ) {
+
+					transform( targets.helix, 2000 );
+
+				}, false );
+
+				var button = document.getElementById( 'grid' );
+				button.addEventListener( 'click', function ( event ) {
+
+					transform( targets.grid, 2000 );
+
+				}, false );
+
+				transform( targets.table, 5000 );
+
+				//
+
+				window.addEventListener( 'resize', onWindowResize, false );
+
+			}
+
+			function transform( targets, duration ) {
+
+				TWEEN.removeAll();
+
+				for ( var i = 0; i < objects.length; i ++ ) {
+
+					var object = objects[ i ];
+					var target = targets[ i ];
+
+					new TWEEN.Tween( object.position )
+						.to( { x: target.position.x, y: target.position.y, z: target.position.z }, Math.random() * duration + duration )
+						.easing( TWEEN.Easing.Exponential.InOut )
+						.start();
+
+					new TWEEN.Tween( object.rotation )
+						.to( { x: target.rotation.x, y: target.rotation.y, z: target.rotation.z }, Math.random() * duration + duration )
+						.easing( TWEEN.Easing.Exponential.InOut )
+						.start();
+
+				}
+
+				new TWEEN.Tween( this )
+					.to( {}, duration * 2 )
+					.onUpdate( render )
+					.start();
+
+			}
+
+			function onWindowResize() {
+
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+
+				renderer.setSize( window.innerWidth, window.innerHeight );
+
+				render();
+
+			}
+
+			function animate() {
+
+				requestAnimationFrame( animate );
+
+				TWEEN.update();
+				controls.update();
+
+			}
+
+			function render() {
+
+				renderer.render( scene, camera );
+
+			}
+
+		</script>
+	</body>
+</html>
